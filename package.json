@@ -1,0 +1,292 @@
+{
+  "name": "modern-fns",
+  "version": "1.0.0",
+  "description": "Modern utility functions for JavaScript and TypeScript — modular, immutable, tree-shakeable and dependency-free.",
+  "keywords": [
+    "utility",
+    "utilities",
+    "functional",
+    "immutable",
+    "tree-shakeable",
+    "typescript",
+    "lodash-alternative",
+    "diff",
+    "deep-diff",
+    "query-string",
+    "url",
+    "object-path",
+    "esm"
+  ],
+  "license": "MIT",
+  "author": "Vishnu M",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vishnu-mani/modern-fns.git"
+  },
+  "bugs": {
+    "url": "https://github.com/vishnu-mani/modern-fns/issues"
+  },
+  "homepage": "https://github.com/vishnu-mani/modern-fns#readme",
+  "type": "module",
+  "sideEffects": false,
+  "main": "./dist/cjs/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/cjs/index.d.ts",
+        "default": "./dist/cjs/index.js"
+      }
+    },
+    "./array": {
+      "import": {
+        "types": "./dist/array/index.d.ts",
+        "default": "./dist/array/index.js"
+      },
+      "require": {
+        "types": "./dist/cjs/array/index.d.ts",
+        "default": "./dist/cjs/array/index.js"
+      }
+    },
+    "./array/*": {
+      "import": {
+        "types": "./dist/array/*.d.ts",
+        "default": "./dist/array/*.js"
+      },
+      "require": {
+        "types": "./dist/cjs/array/*.d.ts",
+        "default": "./dist/cjs/array/*.js"
+      }
+    },
+    "./object": {
+      "import": {
+        "types": "./dist/object/index.d.ts",
+        "default": "./dist/object/index.js"
+      },
+      "require": {
+        "types": "./dist/cjs/object/index.d.ts",
+        "default": "./dist/cjs/object/index.js"
+      }
+    },
+    "./object/*": {
+      "import": {
+        "types": "./dist/object/*.d.ts",
+        "default": "./dist/object/*.js"
+      },
+      "require": {
+        "types": "./dist/cjs/object/*.d.ts",
+        "default": "./dist/cjs/object/*.js"
+      }
+    },
+    "./diff": {
+      "import": {
+        "types": "./dist/diff/index.d.ts",
+        "default": "./dist/diff/index.js"
+      },
+      "require": {
+        "types": "./dist/cjs/diff/index.d.ts",
+        "default": "./dist/cjs/diff/index.js"
+      }
+    },
+    "./diff/*": {
+      "import": {
+        "types": "./dist/diff/*.d.ts",
+        "default": "./dist/diff/*.js"
+      },
+      "require": {
+        "types": "./dist/cjs/diff/*.d.ts",
+        "default": "./dist/cjs/diff/*.js"
+      }
+    },
+    "./string": {
+      "import": {
+        "types": "./dist/string/index.d.ts",
+        "default": "./dist/string/index.js"
+      },
+      "require": {
+        "types": "./dist/cjs/string/index.d.ts",
+        "default": "./dist/cjs/string/index.js"
+      }
+    },
+    "./string/*": {
+      "import": {
+        "types": "./dist/string/*.d.ts",
+        "default": "./dist/string/*.js"
+      },
+      "require": {
+        "types": "./dist/cjs/string/*.d.ts",
+        "default": "./dist/cjs/string/*.js"
+      }
+    },
+    "./number": {
+      "import": {
+        "types": "./dist/number/index.d.ts",
+        "default": "./dist/number/index.js"
+      },
+      "require": {
+        "types": "./dist/cjs/number/index.d.ts",
+        "default": "./dist/cjs/number/index.js"
+      }
+    },
+    "./number/*": {
+      "import": {
+        "types": "./dist/number/*.d.ts",
+        "default": "./dist/number/*.js"
+      },
+      "require": {
+        "types": "./dist/cjs/number/*.d.ts",
+        "default": "./dist/cjs/number/*.js"
+      }
+    },
+    "./url": {
+      "import": {
+        "types": "./dist/url/index.d.ts",
+        "default": "./dist/url/index.js"
+      },
+      "require": {
+        "types": "./dist/cjs/url/index.d.ts",
+        "default": "./dist/cjs/url/index.js"
+      }
+    },
+    "./url/*": {
+      "import": {
+        "types": "./dist/url/*.d.ts",
+        "default": "./dist/url/*.js"
+      },
+      "require": {
+        "types": "./dist/cjs/url/*.d.ts",
+        "default": "./dist/cjs/url/*.js"
+      }
+    },
+    "./query": {
+      "import": {
+        "types": "./dist/query/index.d.ts",
+        "default": "./dist/query/index.js"
+      },
+      "require": {
+        "types": "./dist/cjs/query/index.d.ts",
+        "default": "./dist/cjs/query/index.js"
+      }
+    },
+    "./query/*": {
+      "import": {
+        "types": "./dist/query/*.d.ts",
+        "default": "./dist/query/*.js"
+      },
+      "require": {
+        "types": "./dist/cjs/query/*.d.ts",
+        "default": "./dist/cjs/query/*.js"
+      }
+    },
+    "./value": {
+      "import": {
+        "types": "./dist/value/index.d.ts",
+        "default": "./dist/value/index.js"
+      },
+      "require": {
+        "types": "./dist/cjs/value/index.d.ts",
+        "default": "./dist/cjs/value/index.js"
+      }
+    },
+    "./value/*": {
+      "import": {
+        "types": "./dist/value/*.d.ts",
+        "default": "./dist/value/*.js"
+      },
+      "require": {
+        "types": "./dist/cjs/value/*.d.ts",
+        "default": "./dist/cjs/value/*.js"
+      }
+    },
+    "./functional": {
+      "import": {
+        "types": "./dist/functional/index.d.ts",
+        "default": "./dist/functional/index.js"
+      },
+      "require": {
+        "types": "./dist/cjs/functional/index.d.ts",
+        "default": "./dist/cjs/functional/index.js"
+      }
+    },
+    "./functional/*": {
+      "import": {
+        "types": "./dist/functional/*.d.ts",
+        "default": "./dist/functional/*.js"
+      },
+      "require": {
+        "types": "./dist/cjs/functional/*.d.ts",
+        "default": "./dist/cjs/functional/*.js"
+      }
+    },
+    "./collection": {
+      "import": {
+        "types": "./dist/collection/index.d.ts",
+        "default": "./dist/collection/index.js"
+      },
+      "require": {
+        "types": "./dist/cjs/collection/index.d.ts",
+        "default": "./dist/cjs/collection/index.js"
+      }
+    },
+    "./collection/*": {
+      "import": {
+        "types": "./dist/collection/*.d.ts",
+        "default": "./dist/collection/*.js"
+      },
+      "require": {
+        "types": "./dist/cjs/collection/*.d.ts",
+        "default": "./dist/cjs/collection/*.js"
+      }
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE",
+    "CHANGELOG.md"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "packageManager": "npm@10.0.0",
+  "scripts": {
+    "dev": "vitest",
+    "build": "node scripts/build.mjs",
+    "test": "vitest run",
+    "test:coverage": "vitest run --coverage",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "size": "node scripts/bundle-size.mjs",
+    "verify:build": "node scripts/verify-build.mjs",
+    "ci": "npm run lint && npm run format:check && npm run typecheck && npm run test:coverage && npm run build && npm run verify:build && npm run size",
+    "changeset": "changeset",
+    "version": "changeset version",
+    "release": "npm run build && changeset publish",
+    "prepublishOnly": "npm run build && npm run verify:build"
+  },
+  "devDependencies": {
+    "@changesets/cli": "^2.27.9",
+    "@eslint/js": "^9.15.0",
+    "@types/node": "^22.9.0",
+    "@vitest/coverage-v8": "^2.1.5",
+    "esbuild": "^0.24.0",
+    "eslint": "^9.15.0",
+    "eslint-config-prettier": "^9.1.0",
+    "prettier": "^3.3.3",
+    "typescript": "^5.6.3",
+    "typescript-eslint": "^8.15.0",
+    "vitest": "^2.1.5"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

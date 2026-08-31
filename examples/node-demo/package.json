@@ -1,0 +1,13 @@
+{
+  "name": "modern-fns-node-demo",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "description": "Runnable tour of modern-fns: named imports, subpath imports and namespaces.",
+  "scripts": {
+    "start": "node index.mjs"
+  },
+  "dependencies": {
+    "modern-fns": "file:../.."
+  }
+}

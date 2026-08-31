@@ -1,0 +1,22 @@
+{
+  "name": "modern-fns-vue-demo",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "description": "Live playground exercising every modern-fns utility in a Vue 3 app.",
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc --noEmit && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "modern-fns": "file:../..",
+    "vue": "^3.5.13"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^5.2.1",
+    "typescript": "^5.6.3",
+    "vite": "^6.0.3",
+    "vue-tsc": "^2.1.10"
+  }
+}
