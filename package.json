@@ -1,6 +1,6 @@
 {
   "name": "modern-fns",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Modern JavaScript & TypeScript utility library — 145 modular, immutable, tree-shakeable, dependency-free utilities. A lightweight alternative to Lodash.",
   "keywords": [
     "javascript",
@@ -282,7 +282,7 @@
     "prepublishOnly": "npm run build && npm run verify:build"
   },
   "devDependencies": {
-    "@changesets/cli": "^2.27.9",
+    "@changesets/cli": "^3.0.2",
     "@eslint/js": "^9.15.0",
     "@types/node": "^22.9.0",
     "@vitest/coverage-v8": "^2.1.5",

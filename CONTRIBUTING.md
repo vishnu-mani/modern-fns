@@ -69,8 +69,9 @@ malformed input, and any edge case named in the JSDoc. Immutability is asserted 
 - Conventional commits are preferred but not enforced.
 - Every user-visible change needs a changeset: `npm run changeset`, pick `patch`/`minor`/
   `major`, and describe the change from the user's point of view.
+- Entries in `CHANGELOG.md` are generated from those changesets — do not edit that file by hand.
 - Releases are automated: merging to `main` opens (or updates) a version PR; merging that PR
-  publishes to npm with provenance.
+  publishes to npm.
 
 ## Adding a whole module
 
