@@ -12,6 +12,7 @@
 import { createRequire } from 'node:module';
 import { execFileSync } from 'node:child_process';
 import {
+  cpSync,
   existsSync,
   mkdirSync,
   mkdtempSync,
@@ -230,24 +231,15 @@ await check('typechecks in ESM and CJS consumer projects', () => {
 
   const sandbox = mkdtempSync(join(tmpdir(), 'modern-fns-consumer-'));
   try {
-    // Pack, then extract as npm would: the tarball's `package/` prefix becomes the package root.
-    const packed = execFileSync('npm', ['pack', '--silent', '--pack-destination', sandbox], {
-      cwd: root,
-      encoding: 'utf8',
-      stdio: ['ignore', 'pipe', 'pipe'],
-    })
-      .trim()
-      .split('\n')
-      .pop();
-    const tarball = join(sandbox, packed);
-
     for (const consumer of CONSUMERS) {
       const dir = join(sandbox, consumer.name);
+      // Materialise the package exactly as npm would install it: package.json plus the shipped
+      // `files`. Deliberately not `npm pack` — inside `npm publish` the nested call inherits
+      // npm_config_dry_run and silently produces nothing.
       const installed = join(dir, 'node_modules/modern-fns');
       mkdirSync(installed, { recursive: true });
-      execFileSync('tar', ['-xzf', tarball, '-C', installed, '--strip-components=1'], {
-        stdio: 'pipe',
-      });
+      cpSync(join(root, 'package.json'), join(installed, 'package.json'));
+      cpSync(join(root, 'dist'), join(installed, 'dist'), { recursive: true });
       writeFileSync(join(dir, 'package.json'), JSON.stringify(consumer.pkg, null, 2));
       writeFileSync(
         join(dir, 'tsconfig.json'),
@@ -272,7 +264,7 @@ await check('typechecks in ESM and CJS consumer projects', () => {
   } finally {
     rmSync(sandbox, { recursive: true, force: true });
   }
-  return 'packed tarball, NodeNext resolution, both module systems';
+  return 'installed layout, NodeNext resolution, both module systems';
 });
 
 await check('zero runtime dependencies', () => {

@@ -2,7 +2,7 @@
 'modern-fns': minor
 ---
 
-Initial release: 147 utilities across ten modules, with zero runtime dependencies, ESM + CJS
+Initial release: 145 utilities across ten modules, with zero runtime dependencies, ESM + CJS
 builds, per-function subpath exports and complete TypeScript declarations.
 
 - **array** — `chunk`, `unique`, `uniqueBy`, `groupBy`, `indexBy`, `partition`, `sortBy`,

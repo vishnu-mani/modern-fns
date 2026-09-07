@@ -33,20 +33,23 @@
 
 ## 3. Module map
 
+Counts below are the **as-built** figures, verified against the compiled package.
+
 ```
 modern-fns
-├── array       25 fns   list transforms + diffArray
+├── array       27 fns   list transforms + diffArray
 ├── object      15 fns   path access, merge, clone, structural equality
-├── diff         3 fns   structural change sets (form dirty state, audit logs, PATCH bodies)
+├── diff         4 fns   structural change sets (form dirty state, audit logs, PATCH bodies)
 ├── string      22 fns   case conversion, sanitising, extraction, validation
-├── number      15 fns   math, business math, Intl formatting
+├── number      16 fns   math, business math, Intl formatting
 ├── url         13 fns   absolute + relative URL manipulation
 ├── query       11 fns   query-string parse/serialise with configurable rules
 ├── value       19 fns   coercion + type guards for untrusted input
 ├── functional  13 fns   composition, memoisation, rate limiting, safe execution
 └── collection  10 fns   container-agnostic iteration
                 ───────
-                146 exported functions
+                150 exported names
+                145 unique functions (aliases + cross-module re-exports)
 ```
 
 ## 4. Function list and signatures

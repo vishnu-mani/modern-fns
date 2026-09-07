@@ -1,0 +1,20 @@
+{
+  "name": "modern-fns-website",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "description": "Documentation site for modern-fns.",
+  "scripts": {
+    "sync": "node scripts/sync-docs.mjs",
+    "predev": "npm run sync",
+    "dev": "vitepress dev",
+    "prebuild": "npm run sync",
+    "build": "vitepress build",
+    "preview": "vitepress preview --port 4173",
+    "check:sync": "node scripts/sync-docs.mjs --check"
+  },
+  "devDependencies": {
+    "vitepress": "^1.5.0",
+    "vue": "^3.5.13"
+  }
+}

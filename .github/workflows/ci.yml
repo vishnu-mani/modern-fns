@@ -48,6 +48,24 @@ jobs:
       - name: Verify the published tarball contents
         run: npm pack --dry-run
 
+  website:
+    name: Website builds and docs are in sync
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Install site dependencies
+        working-directory: website
+        run: npm install --no-audit --no-fund
+      - name: Module pages match docs/
+        working-directory: website
+        run: npm run check:sync
+      - name: Build the static site
+        working-directory: website
+        run: npm run build
+
   matrix:
     name: Tests on Node ${{ matrix.node }}
     runs-on: ${{ matrix.os }}

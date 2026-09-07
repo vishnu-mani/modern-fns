@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#111417" />
+  <rect x="0" y="0" width="1200" height="8" fill="#2f6f4f" />
+  <text x="80" y="250" font-family="ui-sans-serif, system-ui, sans-serif" font-size="86"
+        font-weight="700" fill="#ffffff">modern-fns</text>
+  <text x="80" y="330" font-family="ui-sans-serif, system-ui, sans-serif" font-size="38"
+        fill="#9aa4ae">Modern JavaScript &amp; TypeScript utility library</text>
+  <text x="80" y="420" font-family="ui-monospace, Menlo, monospace" font-size="30" fill="#7fc9a3">
+    145 utilities · 0 dependencies · tree-shakeable · immutable
+  </text>
+  <text x="80" y="530" font-family="ui-monospace, Menlo, monospace" font-size="28" fill="#e8ebee">
+    npm install modern-fns
+  </text>
+</svg>

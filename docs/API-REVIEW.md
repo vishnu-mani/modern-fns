@@ -1,6 +1,6 @@
 # Phase 4 — public API review
 
-A pass over all 147 export names (146 unique functions — `slidingWindow` aliases `window`) asking, for each one: _what recurring developer pain does this
+A pass over all 150 export names (145 unique functions — aliases and cross-module re-exports account for the difference) asking, for each one: _what recurring developer pain does this
 eliminate, and is the name and signature the best one available?_ Findings, and what was done
 about them.
 

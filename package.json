@@ -1,15 +1,19 @@
 {
   "name": "modern-fns",
   "version": "1.0.0",
-  "description": "Modern utility functions for JavaScript and TypeScript — modular, immutable, tree-shakeable and dependency-free.",
+  "description": "Modern JavaScript & TypeScript utility library — 145 modular, immutable, tree-shakeable, dependency-free utilities. A lightweight alternative to Lodash.",
   "keywords": [
-    "utility",
-    "utilities",
-    "functional",
-    "immutable",
-    "tree-shakeable",
+    "javascript",
     "typescript",
+    "utility-library",
+    "javascript-utilities",
+    "typescript-utilities",
     "lodash-alternative",
+    "functional-programming",
+    "tree-shaking",
+    "immutable",
+    "frontend",
+    "utilities",
     "diff",
     "deep-diff",
     "query-string",
@@ -27,6 +31,10 @@
     "url": "https://github.com/vishnu-mani/modern-fns/issues"
   },
   "homepage": "https://github.com/vishnu-mani/modern-fns#readme",
+  "funding": {
+    "type": "buymeacoffee",
+    "url": "https://buymeacoffee.com/vishnumani"
+  },
   "type": "module",
   "sideEffects": false,
   "main": "./dist/cjs/index.js",

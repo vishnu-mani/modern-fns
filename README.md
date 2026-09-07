@@ -3,7 +3,9 @@
 **Modern utility functions for JavaScript and TypeScript — modular, immutable, tree-shakeable and
 dependency-free.**
 
-146 focused utilities for the problems frontend and backend developers solve by hand over and
+[![Buy Me A Coffee](https://img.shields.io/badge/Buy%20Me%20A%20Coffee-support-FFDD00?logo=buymeacoffee&logoColor=000)](https://buymeacoffee.com/vishnumani)
+
+145 focused utilities for the problems frontend and backend developers solve by hand over and
 over: reading a nested path safely, diffing two objects for a `PATCH` body, editing a query
 string without losing the hash, parsing `"₹1,299.50"` into a number, formatting `1500000` as
 `"1.5M"`.
@@ -28,14 +30,58 @@ currency(1299.5, 'INR', 'en-IN'); // '₹1,299.50'
 | **Tree-shakeable**            | One function per file. `import { chunk }` ships **0.20 kB** gzipped.                      |
 | **Immutable**                 | No exported function mutates its input. Ever.                                             |
 | **TypeScript-first**          | Written in strict TS, generics that infer, no `any` in the public API.                    |
-| **Universal**                 | Vue, React, Nuxt, Next, Svelte, Node, Deno, Bun, workers, plain `<script type="module">`. |
+| **Universal**                 | Vue, React, Nuxt, Next, Svelte, Node, browsers, workers — no Node built-ins.              |
 | **ESM + CJS**                 | Modern `exports` map with `import`/`require`/`types` conditions.                          |
 | **Tested**                    | 363 tests, 99.4% line coverage; ESM + CJS consumers typechecked against the real tarball. |
 
 ---
 
+## Why modern-fns?
+
+Most JavaScript utility libraries were designed before ES modules, before TypeScript was the
+default, and before bundle size was a shipping constraint. modern-fns is built for the way
+applications are written now.
+
+- **Zero runtime dependencies** — nothing but the platform, enforced by a CI check.
+- **Immutable operations** — no exported function mutates its input, so `===` change detection in
+  Vue, React and Svelte stays correct.
+- **TypeScript-first** — written in strict TypeScript, types generated from the source, no
+  `@types/*` package to install and no `any` in the public API.
+- **Tree-shakeable** — one function per file and `sideEffects: false`, so `import { chunk }`
+  ships 0.20 kB gzipped rather than a library.
+- **ESM and CommonJS** — a modern `exports` map with per-condition `types`, verified by
+  typechecking real ESM and CJS consumer projects in CI.
+- **Per-function imports** — `modern-fns/array/chunk` resolves to exactly one module.
+- **Runs anywhere** — Node 18+, all modern browsers, and any runtime with ES2021 and `Intl`. The
+  package imports no Node built-ins, which CI enforces.
+
+### modern-fns vs Lodash
+
+Lodash is the reference point for this category, so here is an honest comparison. Facts about
+Lodash below were checked against `lodash@4.18.1` on the npm registry.
+
+|                              | modern-fns                           | Lodash                                           |
+| ---------------------------- | ------------------------------------ | ------------------------------------------------ |
+| Runtime dependencies         | 0                                    | 0                                                |
+| Bundled TypeScript types     | Yes, generated from source           | No — install `@types/lodash` separately          |
+| ESM                          | Native                               | Separate `lodash-es` package                     |
+| `exports` map                | Yes, with `import`/`require`/`types` | No `exports` field                               |
+| Tree-shaking from main entry | Yes (`sideEffects: false`)           | Needs `lodash-es` or per-method imports          |
+| Per-function imports         | `modern-fns/array/chunk`             | `lodash/chunk`                                   |
+| Immutability                 | Every function                       | Mixed — `set`, `pull`, `remove`, `assign` mutate |
+| Selector ergonomics          | `keyof T` or a function, everywhere  | Strings, paths, objects, matchers ("iteratee")   |
+| API surface                  | 145 functions                        | ~300 functions                                   |
+
+**When Lodash is still the better choice:** you need its breadth (`_.template`, `_.curry`, the
+full `fp` module), you are on a legacy CommonJS toolchain, or you want a library with a decade of
+production hardening behind it. modern-fns deliberately covers less ground — see
+[Design philosophy](#design-philosophy) for what it declines to reimplement.
+
+---
+
 ## Table of contents
 
+- [Why modern-fns?](#why-modern-fns)
 - [Quick start](#quick-start)
 - [Import styles](#import-styles)
 - [Modules](#modules)
@@ -309,6 +355,10 @@ prefer subpath imports — CJS cannot be tree-shaken by anyone.
 | Safari                                     | 15      |
 | Deno, Bun, Cloudflare Workers, Vercel Edge | current |
 
+Node and browser figures are the supported floor; the ESM build is exercised on Node 16 and 24 and
+in Chrome in CI. Deno, Bun and edge runtimes are expected to work because the package uses no Node
+built-ins, but they are not part of the test matrix.
+
 The library targets ES2021 and uses only `Intl.NumberFormat`, `URL`, `String.prototype.normalize`
 and standard collections. There are no Node built-ins, no DOM requirements and no polyfills — the
 same file runs in a browser, a server and a worker.
@@ -342,6 +392,11 @@ immutability, documentation, edge-case handling, composability.
 
 ## API documentation
 
+Full documentation with a page per module is published at
+**[modern-fns.vercel.app](https://modern-fns.vercel.app)** — see the
+[Lodash migration guide](https://modern-fns.vercel.app/lodash-alternative) and the
+[comparison](https://modern-fns.vercel.app/compare).
+
 Per-function reference — name, description, signature, parameters, return value, examples, edge
 cases and TypeScript notes:
 
@@ -369,6 +424,11 @@ npm install
 npm run dev            # vitest, watch mode
 npm run ci             # lint + typecheck + coverage + build + verify + size
 ```
+
+## Support
+
+modern-fns is free and dependency-free, and stays that way. If it saved you an afternoon, you can
+[buy me a coffee](https://buymeacoffee.com/vishnumani).
 
 ## License
 

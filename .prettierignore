@@ -2,3 +2,6 @@ dist
 coverage
 node_modules
 CHANGELOG.md
+
+# The website is a separate project with its own tooling.
+website
